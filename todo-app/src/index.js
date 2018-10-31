@@ -12,6 +12,7 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 ReactDOM.render(
     <Provider store={store}>
         <App />
+    jiejieiej br
     </Provider>,
     document.getElementById("root")
 );
