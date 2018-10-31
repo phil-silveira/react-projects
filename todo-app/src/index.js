@@ -7,6 +7,8 @@ import reducers from "./reducers";
 import App from "./App";
 import * as ServiceWorker from "./serviceWorker";
 
+import 'semantic-ui-css/semantic.min.css';
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(

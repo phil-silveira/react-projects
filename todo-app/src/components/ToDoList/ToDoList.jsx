@@ -4,6 +4,8 @@ import _ from "lodash";
 import * as actions from "../../actions";
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
 
+import { Button, Container, Icon } from 'semantic-ui-react'
+
 class ToDoList extends Component {
     state = {
         addFormVisible: false,
@@ -26,7 +28,7 @@ class ToDoList extends Component {
         const { addFormVisible, addFormValue } = this.state;
         if (addFormVisible) {
             return (
-                <div id="todo-add-form" className="col s10 offset-s1">
+                <div>
                     <form onSubmit={this.handleFormSubmit}>
                         <div className="input-field">
                             <i className="material-icons prefix">note_add</i>
@@ -54,11 +56,6 @@ class ToDoList extends Component {
         }
         return (
             <div className="col s10 offset-s1 center-align">
-                <img
-                    alt="Nothing was found"
-                    id="nothing-was-found"
-                    src="/img/nothing.png"
-                />
                 <h4>You have completed all the tasks</h4>
                 <p>Start by clicking add button in the bottom of the screen</p>
             </div>
@@ -72,24 +69,19 @@ class ToDoList extends Component {
     render() {
         const { addFormVisible } = this.state;
         return (
-            <div className="to-do-list-container">
+            <Container >
                 <div className="row">
                     {this.renderAddForm()}
                     {this.renderToDos()}
                 </div>
                 <div className="fixed-action-btn">
-                    <button
-                        onClick={() => this.setState({ addFormVisible: !addFormVisible })}
-                        className="btn-floating btn-large teal darken-4"
-                    >
-                        {addFormVisible ? (
-                            <i className="large material-icons">close</i>
-                        ) : (
-                                <i className="large material-icons">add</i>
-                            )}
-                    </button>
+                    {(addFormVisible) ?
+                        <Button onClick={() => this.setState({ addFormVisible: !addFormVisible })} inverted color='red'>Close</Button>
+                        :
+                        <Button onClick={() => this.setState({ addFormVisible: !addFormVisible })} inverted color='green'>Add</Button>
+                    }
                 </div>
-            </div>
+            </Container>
         );
     }
 }

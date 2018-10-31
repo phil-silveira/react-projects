@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { completeToDo } from "../../actions";
 
+import { Icon } from 'semantic-ui-react'
+
 class ToDoListItem extends Component {
     handleCompleteClick = completeToDoId => {
         const { completeToDo } = this.props;
@@ -18,7 +20,7 @@ class ToDoListItem extends Component {
                         onClick={() => this.handleCompleteClick(todoId)}
                         className="complete-todo-item waves-effect waves-light teal lighten-5 teal-text text-darken-4 btn"
                     >
-                        <i className="large material-icons">done</i>
+                        <Icon name='check' color='green' />
                     </span>
                 </h4>
             </div>
