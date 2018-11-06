@@ -1,0 +1,11 @@
+.weather-scene--container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-card{
+    /* max-width: 500px; */
+}
