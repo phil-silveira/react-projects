@@ -5,6 +5,7 @@ import MsgInput from '../components/MsgInput/MsgInput';
 import MsgList from '../components/MsgList/MsgList';
 
 const socket = io('http://localhost:3001')
+//const socket = io('http://10.99.30.72:3001')
 
 export default class PublicChat extends React.Component {
     constructor(props) {
